@@ -10,7 +10,7 @@ export default function Matches({ onGoToBrowse }) {
     api('/matches').then(setMatches).catch((e) => setError(e.message))
   }, [])
 
-  if (error) return <p className="notice notice--coral">{error}</p>
+  if (error) return <p className="notice notice--error">{error}</p>
   if (matches === null) return <p className="muted center">Loading your matches…</p>
 
   return (
@@ -21,10 +21,10 @@ export default function Matches({ onGoToBrowse }) {
       </div>
       {matches.length === 0 ? (
         <div className="card empty">
-          <span className="step__icon">🌼</span>
+          <span className="ornament" aria-hidden="true">❦</span>
           <h2>No matches yet</h2>
           <p className="muted">Like a few people and your matches will bloom here.</p>
-          <button className="btn btn--leaf" onClick={onGoToBrowse}>Start discovering</button>
+          <button className="btn btn--primary" onClick={onGoToBrowse}>Start discovering</button>
         </div>
       ) : (
         <div className="grid">

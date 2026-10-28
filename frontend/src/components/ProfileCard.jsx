@@ -12,7 +12,7 @@ export default function ProfileCard({ person, compact = false, children }) {
             {person.name}
             {person.age ? <span className="age">, {person.age}</span> : null}
           </h2>
-          {person.city && <p className="muted">📍 {person.city}</p>}
+          {person.city && <p className="city">{person.city}</p>}
           <p className="compat-label">{compatLabel(person.compatibility)}</p>
         </div>
         <CompatRing score={person.compatibility} size={compact ? 64 : 88} />
@@ -25,7 +25,7 @@ export default function ProfileCard({ person, compact = false, children }) {
           <p className="eyebrow">You both love</p>
           <ul className="chips">
             {person.shared_artists.map((artist) => (
-              <li key={artist} className="chip chip--leaf">♪ {artist}</li>
+              <li key={artist} className="chip chip--green">♪ {artist}</li>
             ))}
           </ul>
         </div>

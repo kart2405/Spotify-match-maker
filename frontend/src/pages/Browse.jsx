@@ -30,7 +30,7 @@ export default function Browse({ onGoToMatches }) {
     }
   }
 
-  if (error) return <p className="notice notice--coral">{error}</p>
+  if (error) return <p className="notice notice--error">{error}</p>
   if (people === null) return <p className="muted center">Tuning in…</p>
 
   const person = people[0]
@@ -48,17 +48,17 @@ export default function Browse({ onGoToMatches }) {
             <button className="btn btn--ghost btn--round" disabled={busy} onClick={() => decide(person, 'pass')}>
               ✕ Pass
             </button>
-            <button className="btn btn--coral btn--round" disabled={busy} onClick={() => decide(person, 'like')}>
+            <button className="btn btn--wine btn--round" disabled={busy} onClick={() => decide(person, 'like')}>
               ♥ Like
             </button>
           </div>
         </ProfileCard>
       ) : (
         <div className="card empty">
-          <span className="step__icon">🌱</span>
+          <span className="ornament" aria-hidden="true">❦</span>
           <h2>You&rsquo;ve seen everyone for now</h2>
           <p className="muted">New people join all the time. Check back soon, or see your matches.</p>
-          <button className="btn btn--leaf" onClick={onGoToMatches}>See my matches</button>
+          <button className="btn btn--primary" onClick={onGoToMatches}>See my matches</button>
         </div>
       )}
 
@@ -71,7 +71,7 @@ export default function Browse({ onGoToMatches }) {
             <p className="muted">{newMatch.compatibility}% music match</p>
             <div className="decide">
               <button className="btn btn--ghost" onClick={() => setNewMatch(null)}>Keep browsing</button>
-              <button className="btn btn--leaf" onClick={onGoToMatches}>See matches</button>
+              <button className="btn btn--primary" onClick={onGoToMatches}>See matches</button>
             </div>
           </div>
         </div>

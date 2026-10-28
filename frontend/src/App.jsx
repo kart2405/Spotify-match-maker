@@ -53,7 +53,7 @@ function App() {
     <div className="app">
       <nav className="nav">
         <span className="logo">
-          <span className="logo__mark">🌿</span> Match Maker
+          <span className="logo__mark" aria-hidden="true">❦</span> Match Maker
         </span>
         {me && (
           <div className="nav__tabs">
@@ -85,7 +85,7 @@ function App() {
         )}
       </main>
 
-      <footer className="footer muted">Made with music 🎶 · Your listening data is never shown to other people.</footer>
+      <footer className="footer muted">Made with music · Your listening data is never shown to other people.</footer>
     </div>
   )
 }

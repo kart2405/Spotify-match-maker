@@ -35,7 +35,7 @@ export default function Profile({ me, onSaved, welcome }) {
       <div className="page-head">
         <h1>Your profile</h1>
         {welcome && (
-          <p className="notice notice--sun">Welcome! Add a few details so we can start finding your matches.</p>
+          <p className="notice notice--info">Welcome! Add a few details so we can start finding your matches.</p>
         )}
       </div>
 
@@ -86,7 +86,7 @@ export default function Profile({ me, onSaved, welcome }) {
             Show artists we both love on my card
           </label>
           <div className="form__actions">
-            <button className="btn btn--leaf" type="submit">Save profile</button>
+            <button className="btn btn--primary" type="submit">Save profile</button>
             {status === 'saved' ? <span className="saved">✓ Saved</span> : status && <span className="error">{status}</span>}
           </div>
         </form>
@@ -106,7 +106,7 @@ export default function Profile({ me, onSaved, welcome }) {
               <h3>Top genres</h3>
               <ul className="chips">
                 {me.music.top_genres.map((g, i) => (
-                  <li key={g} className={`chip chip--${['sky', 'sun', 'coral', 'lavender', 'leaf'][i % 5]}`}>{g}</li>
+                  <li key={g} className={`chip chip--${['slate', 'gilt', 'rose', 'bordeaux', 'green'][i % 5]}`}>{g}</li>
                 ))}
               </ul>
             </>

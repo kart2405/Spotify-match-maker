@@ -1,11 +1,11 @@
-// Soft nature gradients; each person gets one based on their id.
+// Cameo portrait tones: sepia, Bordeaux, verdigris, zinc, dusty rose, gilt.
 const GRADIENTS = [
-  ['#9fd8b5', '#4c9a6a'], // meadow
-  ['#ffd88a', '#f4a259'], // sunflower
-  ['#a9d4ef', '#5b9fd0'], // sky
-  ['#ffb8a1', '#ec7b5c'], // coral
-  ['#cdbdf0', '#8f78cf'], // lavender
-  ['#b8e3d9', '#3f9c8c'], // lagoon
+  ['#ead7b6', '#a07548'], // sepia
+  ['#e9bdb7', '#7b2233'], // Bordeaux
+  ['#c9dccf', '#3f6b5c'], // verdigris
+  ['#d5dbe3', '#56667a'], // zinc rooftops
+  ['#f0d3cb', '#b9746b'], // dusty rose
+  ['#efe0b2', '#a8842f'], // gilt
 ]
 
 export default function Avatar({ id, name, size = 96 }) {
@@ -15,7 +15,7 @@ export default function Avatar({ id, name, size = 96 }) {
       className="avatar"
       style={{
         width: size,
-        height: size,
+        height: Math.round(size * 1.18),
         fontSize: size * 0.4,
         background: `linear-gradient(135deg, ${from}, ${to})`,
       }}
